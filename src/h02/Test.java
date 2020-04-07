@@ -6,6 +6,6 @@ public class Test extends Applet {
 
     @Override
     public void init() {
-        System.out.println("test");
+        System.out.println("test test");
     }
 }
