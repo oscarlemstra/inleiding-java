@@ -1,21 +1,18 @@
 package h02;
 
-//test
-
-/* test
-* test */
-
 import java.awt.*;
 import java.applet.*;
+
+//opdr 2.1
 
 public class Show extends Applet {
 
     public void init () {
-        setBackground(Color.magenta);
+        setBackground(Color.blue);
     }
 
     public void paint (Graphics g) {
         g.setColor(Color.yellow);
-        g.drawString("Welcome to Java!!", 50, 60);
+        g.drawString("Oscar Lemstra", 50, 60);
     }
 }
