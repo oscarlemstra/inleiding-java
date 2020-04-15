@@ -14,7 +14,7 @@ public class Opdr_4_3 extends Applet {
         //stick
         g.setColor(Color.lightGray);
         g.fillRect(50, 50, 5, 200);
-        g.setColor(Color.red);
+        g.setColor(Color.orange);
         g.fillOval(45, 45, 15, 10);
 
         //flag
