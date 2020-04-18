@@ -8,6 +8,7 @@ public class Opdr_6_1 extends Applet {
     double verdiendeGeld = 113.00;
     double bedragPerPersoon;
 
+
     public void init () {
         setSize(400, 300);
 

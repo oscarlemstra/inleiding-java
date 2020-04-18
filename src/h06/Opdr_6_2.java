@@ -12,6 +12,7 @@ public class Opdr_6_2 extends Applet {
 
     int secUur, secDag, secJaar;
 
+
     public void init () {
         setSize(350, 300);
 

@@ -10,6 +10,7 @@ public class Opdr_6_3 extends Applet {
 
     int resultaat;
 
+
     public void init () {
         setSize(400, 300);
 
