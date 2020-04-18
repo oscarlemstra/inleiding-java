@@ -8,10 +8,11 @@ public class Opdr_5_2 extends Applet {
     //   0kg = 0
     //  20kg = 35
     //  40kg = 70
-    //  80kg = 105
-    // 100kg = 140
-    // 120kg = 175
-    int valerieKG = 70;
+    //  60kg = 105
+    //  80kg = 140
+    // 100kg = 175
+    // 120kg = 210
+    int valerieKG = 175;
     int jeroenKG = 105;
     int hansKG = 140;
 
