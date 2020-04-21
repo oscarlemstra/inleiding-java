@@ -12,6 +12,7 @@ public class PraktijkOpdracht extends Applet {
     double gemiddelde;
     int intGemiddelde;
 
+
     public void init () {
         setSize(350, 300);
 
