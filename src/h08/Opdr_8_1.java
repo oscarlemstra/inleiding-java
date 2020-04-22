@@ -19,7 +19,7 @@ public class Opdr_8_1 extends Applet {
         setSize(400, 300);
 
         label = new Label("Type iets");
-        tekstvak = new TextField(input, 20);
+        tekstvak = new TextField("", 20);
         knopOk = new Button ("Ok");
         knopOk.addActionListener(new KnopListenerOk());
         knopReset = new Button("Reset");
