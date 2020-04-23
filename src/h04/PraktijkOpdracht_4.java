@@ -3,7 +3,7 @@ package h04;
 import java.awt.*;
 import java.applet.*;
 
-public class PraktijkOpdracht extends Applet {
+public class PraktijkOpdracht_4 extends Applet {
 
     public void init () {
         setSize(700, 400);
