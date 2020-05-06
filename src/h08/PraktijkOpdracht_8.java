@@ -12,6 +12,7 @@ public class PraktijkOpdracht_8 extends Applet {
     String input1, input2, output;
     double getal1, getal2, resultaat;
 
+
     public void init () {
         setSize(400,300);
 
