@@ -10,6 +10,7 @@ public class Opdr_12_1 extends Applet {
     int doubleToInt;
     int posY = 60;
 
+
     public void init () {
         setSize(400, 300);
     }
