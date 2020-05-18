@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.applet.*;
 
-public class PraktijkOpdracht_11_2 extends Applet {
+public class PraktijkOpdr_11_2 extends Applet {
 
     Button knopVorige, knopVolgende;
 

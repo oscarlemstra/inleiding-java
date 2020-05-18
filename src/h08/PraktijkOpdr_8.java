@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.applet.*;
 
-public class PraktijkOpdracht_8 extends Applet {
+public class PraktijkOpdr_8 extends Applet {
 
     TextField tekstvak1, tekstvak2;
     Button knop1, knop2, knop3, knop4;

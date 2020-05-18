@@ -3,7 +3,7 @@ package h06;
 import java.awt.*;
 import java.applet.*;
 
-public class PraktijkOpdracht_6 extends Applet {
+public class PraktijkOpdr_6 extends Applet {
 
     double cijfer1 = 5.9;
     double cijfer2 = 6.3;
