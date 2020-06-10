@@ -16,7 +16,9 @@ public class PraktijkOpdr_14 extends Applet {
 
     int aantalKnopen = 23;
     boolean gewonnen = false;
-    String input;
+    int spelerZet;
+    String computerTekst = "";
+    String spelerTekst = "Aantal knopen: " + aantalKnopen + ". Jouw beurt.";
 
 
     public void init () {
@@ -37,11 +39,11 @@ public class PraktijkOpdr_14 extends Applet {
 
     public void paint (Graphics g) {
 
-        int posX = 20, posY = 100;
+        int posX = 20, posY = 90;
         int breedte = 40, hoogte = 40;
         int startPosX = posX;
         int positionPlus = 50;
-        int rijen = 5;
+        int rijen = 4;
 
         for (int i = 0; i < aantalKnopen; i++) {
             g.drawImage(knoop, posX, posY, breedte, hoogte, this);
@@ -52,13 +54,48 @@ public class PraktijkOpdr_14 extends Applet {
                 posY += positionPlus;
             }
         }
+
+
+        g.drawString(computerTekst, 20, 50);
+        g.drawString(spelerTekst, 20, 70);
     }
 
 
     class KnopLis implements ActionListener {
 
         public void actionPerformed (ActionEvent e) {
+
+            spelerZet = Integer.parseInt(tekstvak.getText());
+
+            if (spelerZet >= 1 && spelerZet <= 3) {
+                aantalKnopen -= spelerZet;
+                aantalKnopen -= zetVanComputer();
+
+                computerTekst = "De computer heeft " + zetVanComputer() + " smileys weggehaald.";
+                spelerTekst = "Aantal knopen: " + aantalKnopen + ". Jouw beurt.";
+            }
+            else {
+                computerTekst = "";
+                spelerTekst = "Deze zet mag niet, doe het opnieuw.";
+            }
+
+            if (aantalKnopen <= 0) {
+                computerTekst = "";
+                spelerTekst = "ha niks";
+            }
+
             repaint();
         }
     }
+
+
+    //methodes
+    int zetVanComputer () {
+
+        int computerZet = 0;
+
+        //hier moet de computer denken
+
+        return computerZet;
+    }//end method
 }
