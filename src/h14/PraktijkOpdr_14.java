@@ -15,8 +15,6 @@ public class PraktijkOpdr_14 extends Applet {
     Button knop;
 
     int aantalKnopen = 23;
-    int[] posX = {20,70,120,170, 20,70,120,170, 20,70,120,170, 20,70,120,170, 20,70,120,170, 20,70,120};
-    int[] posY = {40,40,40,40, 90,90,90,90, 140,140,140,140, 190,190,190,190, 240,240,240,240, 290,290,290};
     boolean gewonnen = false;
     String input;
 
@@ -39,8 +37,20 @@ public class PraktijkOpdr_14 extends Applet {
 
     public void paint (Graphics g) {
 
+        int posX = 20, posY = 100;
+        int breedte = 40, hoogte = 40;
+        int startPosX = posX;
+        int positionPlus = 50;
+        int rijen = 5;
+
         for (int i = 0; i < aantalKnopen; i++) {
-            g.drawImage(knoop, posX[i], posY[i],this);
+            g.drawImage(knoop, posX, posY, breedte, hoogte, this);
+            posX += positionPlus;
+
+            if (posX == positionPlus * rijen + startPosX) {
+                posX = startPosX;
+                posY += positionPlus;
+            }
         }
     }
 
