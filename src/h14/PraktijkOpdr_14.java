@@ -15,17 +15,16 @@ public class PraktijkOpdr_14 extends Applet {
     Button knop;
 
     int aantalKnopen = 23;
-    boolean gewonnen = false;
-    int spelerZet;
+    boolean beurt = true; //true = speler, false = computer
     String computerTekst = "";
     String spelerTekst = "Aantal knopen: " + aantalKnopen + ". Jouw beurt.";
 
 
     public void init () {
-        setSize(400, 400);
+        setSize(380, 400);
 
         label = new Label("Hoeveel knopen neem je 1, 2 of 3?");
-        tekstvak = new TextField("", 10);
+        tekstvak = new TextField("", 8);
         knop = new Button("Speel");
         knop.addActionListener(new KnopLis());
 
@@ -65,13 +64,24 @@ public class PraktijkOpdr_14 extends Applet {
 
         public void actionPerformed (ActionEvent e) {
 
+            int spelerZet;
+
+            //reset het spel
+            if (aantalKnopen <= 0) {
+                aantalKnopen = 23;
+                computerTekst = "";
+                spelerTekst = "Aantal knopen: " + aantalKnopen + ". Jouw beurt.";
+                tekstvak.setText("");
+                repaint();
+            }
+
+            //spel verwerking
             spelerZet = Integer.parseInt(tekstvak.getText());
 
             if (spelerZet >= 1 && spelerZet <= 3) {
                 aantalKnopen -= spelerZet;
                 aantalKnopen -= zetVanComputer();
 
-                computerTekst = "De computer heeft " + zetVanComputer() + " smileys weggehaald.";
                 spelerTekst = "Aantal knopen: " + aantalKnopen + ". Jouw beurt.";
             }
             else {
@@ -79,9 +89,18 @@ public class PraktijkOpdr_14 extends Applet {
                 spelerTekst = "Deze zet mag niet, doe het opnieuw.";
             }
 
+
+            //checkt wie gewonnen heeft
             if (aantalKnopen <= 0) {
-                computerTekst = "";
-                spelerTekst = "ha niks";
+                if (beurt) {
+                    computerTekst = "De computer heeft gewonnen.";
+                    spelerTekst = "Als je opnieuw wilt spelen druk op speel.";
+                }
+
+                if (!beurt) {
+                    computerTekst = "Jij hebt gewonnen.";
+                    spelerTekst = "Als je opnieuw wilt spelen druk op speel.";
+                }
             }
 
             repaint();
@@ -92,40 +111,31 @@ public class PraktijkOpdr_14 extends Applet {
     //methodes
     int zetVanComputer () {
 
-        int computerZet = (int) (Math.random() * 3 + 0);
-        int bereken = aantalKnopen - computerZet;
-        boolean winIk = false;
+        int computerZet = 0;
 
-        //21
-        if (aantalKnopen == 22) {
-            computerZet = 1;
-            winIk = true;
-        }
-        else if (aantalKnopen == 20) {
-            computerZet = 3;
-            winIk = true;
-        }
-        //17 13 9 5 1
-        else if (spelerZet == 1) {
-            computerZet = 3;
-        }
-        else if (spelerZet == 2) {
-            computerZet = 2;
-        }
-        else if (spelerZet == 3) {
-            computerZet = 1;
-        }
 
-        if (aantalKnopen == 21) {
-            winIk = false;
-        }
-
-        if (!winIk) {
+        if (aantalKnopen % 4 == 1) {
             computerZet = (int) (Math.random() * 3 + 1);
         }
+        else if (aantalKnopen - 1 == ((aantalKnopen - 1) % 4) * aantalKnopen - 1) {
+            computerZet = 1;
+        }
+        else if (aantalKnopen - 2 == ((aantalKnopen - 2) % 4) * aantalKnopen - 2) {
+            computerZet = 2;
+        }
+        else if (aantalKnopen - 3 == ((aantalKnopen - 3) % 4) * aantalKnopen - 3) {
+            computerZet = 3;
+        }
 
-        //nog niks
+        //kijkt wie aan de beurt was
+        if (aantalKnopen < 1) {
+            beurt = true;
+        }
+        else {
+            beurt = false;
+        }
 
+        computerTekst = "De computer heeft " + computerZet + " smileys weggehaald.";
         return computerZet;
     }//end method
 }
