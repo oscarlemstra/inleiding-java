@@ -92,9 +92,39 @@ public class PraktijkOpdr_14 extends Applet {
     //methodes
     int zetVanComputer () {
 
-        int computerZet = 0;
+        int computerZet = (int) (Math.random() * 3 + 0);
+        int bereken = aantalKnopen - computerZet;
+        boolean winIk = false;
 
-        //hier moet de computer denken
+        //21
+        if (aantalKnopen == 22) {
+            computerZet = 1;
+            winIk = true;
+        }
+        else if (aantalKnopen == 20) {
+            computerZet = 3;
+            winIk = true;
+        }
+        //17 13 9 5 1
+        else if (spelerZet == 1) {
+            computerZet = 3;
+        }
+        else if (spelerZet == 2) {
+            computerZet = 2;
+        }
+        else if (spelerZet == 3) {
+            computerZet = 1;
+        }
+
+        if (aantalKnopen == 21) {
+            winIk = false;
+        }
+
+        if (!winIk) {
+            computerZet = (int) (Math.random() * 3 + 1);
+        }
+
+        //nog niks
 
         return computerZet;
     }//end method
