@@ -11,11 +11,11 @@ public class PraktijkOpdr_13 extends Applet {
 
     public void paint (Graphics g) {
 
-        tekenBoom(g, 10);
+        tekenBomen(g, 10);
     }
 
 
-    void tekenBoom (Graphics g, int aantal) {
+    void tekenBomen (Graphics g, int aantal) {
 
         int i;
         int posX1 = 40, posY1 = 60;
